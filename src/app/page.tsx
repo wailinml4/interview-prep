@@ -37,10 +37,10 @@ function Navbar() {
     <nav className="border-b border-border bg-card/80 backdrop-blur-md sticky top-0 z-50">
       <div className="container">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <BrainCircuitIcon className="size-8 text-primary" />
-            <h1 className="text-2xl font-bold text-foreground">Landr</h1>
-          </div>
+            <span className="text-xl font-bold">Landr</span>
+          </Link>
           <Suspense
             fallback={
               <SignInButton forceRedirectUrl="/dashboard">

@@ -10,6 +10,13 @@ export const questionDifficultyEnum = pgEnum(
   questionDifficulties
 )
 
+export const questionTypes = ["leetcode", "system-design", "engineering"] as const
+export type QuestionType = (typeof questionTypes)[number]
+export const questionTypeEnum = pgEnum(
+  "questions_question_type",
+  questionTypes
+)
+
 export const QuestionTable = pgTable("questions", {
   id,
   jobInfoId: uuid()
@@ -17,6 +24,7 @@ export const QuestionTable = pgTable("questions", {
     .notNull(),
   text: varchar().notNull(),
   difficulty: questionDifficultyEnum().notNull(),
+  type: questionTypeEnum(),
   createdAt,
   updatedAt,
 })

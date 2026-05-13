@@ -8,7 +8,7 @@ import { Loader2Icon } from "lucide-react"
 import { cacheTag } from "next/dist/server/use-cache/cache-tag"
 import { notFound, redirect } from "next/navigation"
 import { Suspense } from "react"
-import { NewQuestionClientPage } from "./NewQuestionClientPage"
+import { NewQuestionClientPage } from "@/app/dashboard/job-infos/[jobInfoId]/questions/NewQuestionClientPage"
 
 export default async function QuestionsPage({
   params,

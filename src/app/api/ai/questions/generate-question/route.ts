@@ -4,6 +4,7 @@ import {
   questionDifficulties,
   QuestionTable,
 } from "@/drizzle/schema"
+import { questionTypes } from "@/drizzle/schema"
 import { getJobInfoIdTag } from "@/lib/cache/job-infos"
 import { insertQuestion } from "@/lib/db/questions"
 import { getQuestionJobInfoTag } from "@/lib/cache/questions"
@@ -17,6 +18,7 @@ import z from "zod"
 
 const schema = z.object({
   prompt: z.enum(questionDifficulties),
+  type: z.enum(questionTypes),
   jobInfoId: z.string().min(1),
 })
 
@@ -28,7 +30,7 @@ export async function POST(req: Request) {
     return new Response("Error generating your question", { status: 400 })
   }
 
-  const { prompt: difficulty, jobInfoId } = result.data
+  const { prompt: difficulty, jobInfoId, type } = result.data
   const { userId } = await getCurrentUser()
 
   if (userId == null) {
@@ -52,11 +54,13 @@ export async function POST(req: Request) {
     previousQuestions,
     jobInfo,
     difficulty,
+    type,
     onFinish: async question => {
       await insertQuestion({
         text: question,
         jobInfoId,
         difficulty,
+        type,
       })
     },
   })

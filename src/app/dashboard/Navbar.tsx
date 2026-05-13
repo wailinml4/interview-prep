@@ -35,7 +35,7 @@ export function Navbar({ user }: { user: { name: string; imageUrl: string } }) {
   return (
     <nav className="h-header border-b">
       <div className="container flex h-full items-center justify-between">
-        <Link href="/dashboard" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <BrainCircuitIcon className="size-8 text-primary" />
           <span className="text-xl font-bold">Landr</span>
         </Link>

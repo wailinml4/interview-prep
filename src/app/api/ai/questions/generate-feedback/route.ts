@@ -38,6 +38,7 @@ export async function POST(req: Request) {
   const res = generateAiQuestionFeedback({
     question: question.text,
     answer,
+    type: question.type ?? undefined,
   })
 
   return res.toUIMessageStreamResponse()
