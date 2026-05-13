@@ -23,7 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { jobInfoSchema } from "@/schemas/jobInfo"
+import { jobInfoSchema } from "@/validation/jobInfo"
 import { formatExperienceLevel } from "@/lib/formatExperienceLevel"
 import { LoadingSwap } from "@/components/ui/loading-swap"
 import { createJobInfo, updateJobInfo } from "@/lib/actions/job-infos"

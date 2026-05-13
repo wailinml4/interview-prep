@@ -1,5 +1,5 @@
 export async function createInterview(data: any) {
-  // stub implementation used during build; replace with real logic as needed
+  // stub implementation used on the client; replace with real logic (API call) as needed
   return { id: data?.id ?? null, error: false, message: "" }
 }
 
