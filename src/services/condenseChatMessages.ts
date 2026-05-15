@@ -1,7 +1,7 @@
 import { ConnectionMessage } from "@humeai/voice-react"
 import type { JsonMessage, HumeChatEvent, Message as HumeMessage } from "@/types"
 
-type Message = JsonMessage | ConnectionMessage | HumeChatEvent
+type Message = JsonMessage | ConnectionMessage | HumeChatEvent | HumeMessage
 
 export function condenseChatMessages(messages: Message[]) {
   return messages.reduce((acc, message) => {

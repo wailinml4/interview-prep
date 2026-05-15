@@ -22,13 +22,22 @@ import { notFound } from "next/navigation"
 
 const options = [
   {
-    label: "Answer Technical Questions",
-    description:
-      "Challenge yourself with practice questions tailored to your job description.",
-    href: "questions",
+    label: "LeetCode",
+    description: "Generate and practice LeetCode-style coding problems.",
+    href: "questions/leetcode",
   },
   {
-    label: "Practice Interviewing",
+    label: "System Design",
+    description: "Generate and practice system design prompts tailored to the role.",
+    href: "questions/system-design",
+  },
+  {
+    label: "Engineering",
+    description: "Generate feature-implementation prompts (small apps, APIs) tailored to the role.",
+    href: "questions/engineering",
+  },
+  {
+    label: "Behavioral",
     description: "Simulate a real interview with AI-powered mock interviews.",
     href: "interviews",
   },

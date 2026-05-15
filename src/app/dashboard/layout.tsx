@@ -1,7 +1,7 @@
 import { getCurrentUser } from "@/lib/getCurrentUser"
 import { redirect } from "next/navigation"
 import { ReactNode } from "react"
-import { Navbar } from "./Navbar"
+import { Navbar } from "@/components/layout/Navbar"
 
 export default async function AppLayout({ children }: { children: ReactNode }) {
   const { userId, user } = await getCurrentUser({ allData: true })

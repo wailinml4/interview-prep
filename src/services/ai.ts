@@ -1,7 +1,7 @@
 import { JobInfoTable } from "@/drizzle/schema"
 import { streamObject } from "ai"
 import { google } from "@/services/google"
-import { aiAnalyzeSchema } from "@/schemas/aiAnalyze"
+import { aiAnalyzeSchema } from "@/validation/aiAnalyze"
 import { resumeAnalysisPrompt } from "@/lib/prompts/resumeAnalysis"
 
 export async function analyzeResumeForJob({

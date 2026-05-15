@@ -1,7 +1,7 @@
 "use server"
 
 import z from "zod"
-import { jobInfoSchema } from "@/schemas/jobInfo"
+import { jobInfoSchema } from "@/validation/jobInfo"
 import { getCurrentUser } from "@/lib/getCurrentUser"
 import { insertJobInfo, updateJobInfo as updateJobInfoDb } from "@/lib/db/job-infos"
 import { redirect } from "next/navigation"

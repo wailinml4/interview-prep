@@ -26,9 +26,12 @@ type Status = "awaiting-answer" | "awaiting-difficulty" | "init"
 
 export function NewQuestionClientPage({
   jobInfo,
+  type: propType,
 }: {
   jobInfo: Pick<typeof JobInfoTable.$inferSelect, "id" | "name" | "title">
+  type?: "leetcode" | "system-design" | "engineering"
 }) {
+  const defaultType = propType ?? (typeof window !== "undefined" ? (window as any).__QUESTION_TYPE : undefined)
   const [status, setStatus] = useState<Status>("init")
   const [answer, setAnswer] = useState<string | null>(null)
   const [questionId, setQuestionId] = useState<string | null>(null)
@@ -119,7 +122,12 @@ export function NewQuestionClientPage({
             setAnswer(null)
             setQuestionId(null)
 
-            generateQuestion(difficulty, { body: { jobInfoId: jobInfo.id } })
+            const body: Record<string, string> = {
+              jobInfoId: jobInfo.id,
+            }
+            if (defaultType) body.type = defaultType
+
+            generateQuestion(difficulty, { body })
           }}
         />
         <div className="flex-grow hidden md:block" />

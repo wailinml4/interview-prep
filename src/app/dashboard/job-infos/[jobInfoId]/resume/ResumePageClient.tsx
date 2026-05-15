@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/card"
 import { LoadingSwap } from "@/components/ui/loading-swap"
 import { cn } from "@/lib/utils"
-import { aiAnalyzeSchema } from "@/schemas/aiAnalyze"
+import { aiAnalyzeSchema } from "@/validation/aiAnalyze"
 import { experimental_useObject as useObject } from "@ai-sdk/react"
 import { DeepPartial } from "ai"
 import {
